@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDom = require('react-dom');
+var _ = require('lodash');
 
 var AppointmentList = require('./AppointmentList');
 
@@ -17,12 +18,20 @@ var MainInterface = React.createClass({
       this.setState({
         myAppointments: tempAppointments
       }); // setState
-    }.bind(this)); //tempAppointments
+    }.bind(this));
   }, // componentDidMount
 
   componentWillUnmount: function() {
     this.serverRequest.abort();
-  },
+  }, // componentWillUnmount
+
+  deleteMessage: function(item) {
+    var allAppointments = this.state.myAppointments;
+    var newAppointments = _.without(allAppointments, item);
+    this.setState({
+      myAppointments: newAppointments
+    }); // setState
+  }, // deleteMessage
 
   render: function() {
     var filteredAppointments = this.state.myAppointments;
@@ -30,7 +39,9 @@ var MainInterface = React.createClass({
     filteredAppointments = filteredAppointments.map(function(item, index) {
       return (
         <AppointmentList key = { index }
-          singleItem = { item } />
+          singleItem = { item } 
+          whichItem = { item }
+          onDelete = { this.deleteMessage } />
       ) // return
     }.bind(this)); //filteredAppointments
 
