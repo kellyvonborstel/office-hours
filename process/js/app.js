@@ -3,6 +3,7 @@ var ReactDom = require('react-dom');
 var _ = require('lodash');
 
 var AppointmentList = require('./AppointmentList');
+var AddAppointment = require('./AddAppointment');
 
 var MainInterface = React.createClass({
 
@@ -47,7 +48,8 @@ var MainInterface = React.createClass({
 
     return (
       <div className="interface">
-          <ul className="item-list media-list">{ filteredAppointments }</ul>
+        <AddAppointment />
+        <ul className="item-list media-list">{ filteredAppointments }</ul>
       </div>
     ) // return
   } // render

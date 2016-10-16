@@ -54,6 +54,35 @@ footer {
 
 /** Interface Styles **/
 
+.panel-primary > .panel-heading {
+  background-color: #acaf64;
+  border-color: #acaf64;
+}
+
+.panel-primary {
+  border-color: #acaf64;
+}
+
+.btn-primary {
+  background-color: #acaf64;
+  border-color: #acaf64;
+}
+
+.btn-primary:hover {
+  background-color: #878a3e;
+  border-color: #878a3e;
+}
+
+.btn-danger {
+  background-color: #fa8068;
+  border-color: #fa8068;
+}
+
+.btn-danger:hover {
+  background-color: #e85f44;
+  border-color: #e85f44;
+}
+
 .appointment-addheading {
   cursor: pointer;
   -webkit-user-select: none;
