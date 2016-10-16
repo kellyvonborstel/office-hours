@@ -1,15 +1,25 @@
 var React = require('react');
 
 var AddAppointment = React.createClass({
+
+  toggleFormDisplay: function() {
+    this.props.handleToggle();
+  },
+  
   render: function() {
+
+    var displayForm = {
+      display: this.props.formVisible ? 'block' : 'none'
+    };
+
     return(
       <div className="panel panel-primary">
 
-        <div className="panel-heading appointment-addheading">
+        <div className="panel-heading appointment-addheading" onClick={ this.toggleFormDisplay }>
           <span className="glyphicon glyphicon-plus"></span> Add Appointment
         </div>
 
-        <div className="panel-body">
+        <div className="panel-body" style={ displayForm }>
 
           <form className="add-appointment form-horizontal">
 

@@ -9,6 +9,7 @@ var MainInterface = React.createClass({
 
   getInitialState: function() {
     return {
+      appointmentFormVisible: false,
       myAppointments: []
     } // return
   }, // getInitialState
@@ -34,6 +35,13 @@ var MainInterface = React.createClass({
     }); // setState
   }, // deleteAppointment
 
+  toggleAppointmentForm: function() {
+    var tempVisibility = !this.state.appointmentFormVisible;
+    this.setState({
+      appointmentFormVisible: tempVisibility
+    }); // setState
+  }, // toggleAppointmentForm
+
   render: function() {
     var filteredAppointments = this.state.myAppointments;
 
@@ -48,7 +56,9 @@ var MainInterface = React.createClass({
 
     return (
       <div className="interface">
-        <AddAppointment />
+        <AddAppointment 
+          formVisible = { this.state.appointmentFormVisible }
+          handleToggle = { this.toggleAppointmentForm } />
         <ul className="item-list media-list">{ filteredAppointments }</ul>
       </div>
     ) // return
