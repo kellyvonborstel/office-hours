@@ -1,0 +1,26 @@
+[
+  {
+    "studentName": "Jane Doe",
+    "courseName": "VC 237",
+    "appointmentDate": "2016-12-10 15:30",
+    "appointmentNotes": "Discuss exam grade and extra credit work"
+  },
+  {
+    "studentName": "John Smith",
+    "courseName": "VC 238",
+    "appointmentDate": "2016-12-10 14:30",
+    "appointmentNotes": "Go over forms assignment"
+  },
+  {
+    "studentName": "Eric Jones",
+    "courseName": "VC 237",
+    "appointmentDate": "2016-12-12 15:30",
+    "appointmentNotes": "Discuss project deadline extension"
+  },
+  {
+    "studentName": "Emily Brown",
+    "courseName": "VC 238",
+    "appointmentDate": "2016-12-12 16:00",
+    "appointmentNotes": "Review material from recent absence"
+  }
+]
