@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Roboto+Slab:100,300,400,700');
+
+/** Global Styles **/
+
+body {
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  position: relative;
+  background-color: #6e9eb5;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
+/** Header Styles **/
+
+header {
+  margin-bottom: 0;
+}
+
+header {
+  background-color: #6e9eb5;
+  border: none;
+  border-radius: 0;
+  padding: 20px 0;
+}
+
+header h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 400;
+  padding-left: 35px;
+}
+
+header h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 300;
+  padding-left: 35px;
+}
+
+.main {
+  background: #fff;
+  padding: 30px 0;
+}
+
+/** Footer Styles **/
+
+footer {
+  background: #6e9eb5;
+  color: white;
+  font-size: .8em;
+  padding: 20px;
+  text-align: center;
+}
+
+/** Interface Styles **/
+
+.apt-addheading {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+.item-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin: 10px 5%;
+  font-size: 1rem;
+}
+
+.item-list .student-item {
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 10px;
+}
+
+.item-list .student-item:last-child {
+  border-bottom: none;
+}
+
+.item-list .student-name {
+  font-weight: 600;
+  color: #6e9eb5;
+  font-size: 1.3em;
+  line-height: 100%;
+}
+
+.item-list .student-info {
+  font-size: 1.7em;
+}
+
+.item-list .label-item {
+  font-weight: 600;
+  color: #ccc;
+}
+
+.item-list .student-delete {
+  font-size: 1.2em;
+}
