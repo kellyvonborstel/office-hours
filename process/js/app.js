@@ -25,13 +25,13 @@ var MainInterface = React.createClass({
     this.serverRequest.abort();
   }, // componentWillUnmount
 
-  deleteMessage: function(item) {
+  deleteAppointment: function(item) {
     var allAppointments = this.state.myAppointments;
     var newAppointments = _.without(allAppointments, item);
     this.setState({
       myAppointments: newAppointments
     }); // setState
-  }, // deleteMessage
+  }, // deleteAppointment
 
   render: function() {
     var filteredAppointments = this.state.myAppointments;
@@ -41,7 +41,7 @@ var MainInterface = React.createClass({
         <AppointmentList key = { index }
           singleItem = { item } 
           whichItem = { item }
-          onDelete = { this.deleteMessage } />
+          onDelete = { this.deleteAppointment } />
       ) // return
     }.bind(this)); //filteredAppointments
 
