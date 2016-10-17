@@ -12,12 +12,12 @@ var SearchAppointments = React.createClass({
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by: <span className="caret"></span>
               </button>
               <ul className="dropdown-menu dropdown-menu-right">
-                <li><a href="#" id="studentName">Student</a></li>
-                <li><a href="#" id="appointmentDate">Date</a></li>
-                <li><a href="#" id="courseName">Course</a></li>
+                <li><a href="#" id="studentName">Student { this.props.orderBy === 'studentName' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="appointmentDate">Date { this.props.orderBy === 'appointmentDate' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="courseName">Course { this.props.orderBy === 'courseName' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
                 <li role="separator" className="divider"></li>
-                <li><a href="#" id="asc">Asc</a></li>
-                <li><a href="#" id="desc">Desc</a></li>
+                <li><a href="#" id="asc">Asc { this.props.orderDir === 'asc' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="desc">Desc { this.props.orderDir === 'desc' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
               </ul>
             </div>
           </div>

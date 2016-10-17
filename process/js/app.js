@@ -11,6 +11,8 @@ var MainInterface = React.createClass({
   getInitialState: function() {
     return {
       appointmentFormVisible: false,
+      orderBy: 'studentName',
+      orderDir: 'asc',
       myAppointments: []
     } // return
   }, // getInitialState
@@ -53,6 +55,12 @@ var MainInterface = React.createClass({
 
   render: function() {
     var filteredAppointments = this.state.myAppointments;
+    var orderBy = this.state.orderBy;
+    var orderDir = this.state.orderDir;
+
+    filteredAppointments = _.orderBy(filteredAppointments, function(item) {
+      return item[orderBy].toLowerCase();
+    }, orderDir); // orderBy
 
     filteredAppointments = filteredAppointments.map(function(item, index) {
       return (
@@ -69,7 +77,9 @@ var MainInterface = React.createClass({
           formVisible = { this.state.appointmentFormVisible }
           handleToggle = { this.toggleAppointmentForm }
           handleSubmission = { this.addItem } />
-        <SearchAppointments />
+        <SearchAppointments 
+          orderBy = { this.state.orderBy }
+          orderDir = { this.state.orderDir } />
         <ul className="item-list media-list">{ filteredAppointments }</ul>
       </div>
     ) // return
