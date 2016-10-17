@@ -13,6 +13,7 @@ var MainInterface = React.createClass({
       appointmentFormVisible: false,
       orderBy: 'studentName',
       orderDir: 'asc',
+      queryText: '',
       myAppointments: []
     } // return
   }, // getInitialState
@@ -60,10 +61,29 @@ var MainInterface = React.createClass({
     }); // setState
   }, // reOrder
 
+  searchAppointments: function(q) {
+    this.setState({
+      queryText: q
+    }); // setState
+  }, // searchAppointments
+
   render: function() {
-    var filteredAppointments = this.state.myAppointments;
+    var filteredAppointments = [];
     var orderBy = this.state.orderBy;
     var orderDir = this.state.orderDir;
+    var queryText = this.state.queryText;
+    var myAppointments = this.state.myAppointments;
+
+    myAppointments.forEach(function(item) {
+      if (
+        item.studentName.toLowerCase().indexOf(queryText) !== -1 ||
+        item.courseName.toLowerCase().indexOf(queryText) !== -1 ||
+        item.appointmentDate.toLowerCase().indexOf(queryText) !== -1 ||
+        item.appointmentNotes.toLowerCase().indexOf(queryText) !== -1
+      ) {
+        filteredAppointments.push(item);
+      }
+    })
 
     filteredAppointments = _.orderBy(filteredAppointments, function(item) {
       return item[orderBy].toLowerCase();
@@ -90,6 +110,7 @@ var MainInterface = React.createClass({
           orderBy = { this.state.orderBy }
           orderDir = { this.state.orderDir }
           onReOrder = { this.reOrder }
+          onSearch = { this.searchAppointments }
         />
         <ul className="item-list media-list">{ filteredAppointments }</ul>
       </div>
