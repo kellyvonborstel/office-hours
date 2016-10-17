@@ -21,7 +21,7 @@ var AppointmentList = React.createClass({
           </div>
         </div>
         <div className="course-name">
-          <span className="label-item">Course: </span>
+          <span className="label-item">Course — </span>
           { this.props.singleItem.courseName }
         </div>
         <div className="appointment-notes">{ this.props.singleItem.appointmentNotes }</div>

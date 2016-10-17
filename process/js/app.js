@@ -83,7 +83,7 @@ var MainInterface = React.createClass({
       ) {
         filteredAppointments.push(item);
       }
-    })
+    }); // forEach
 
     filteredAppointments = _.orderBy(filteredAppointments, function(item) {
       return item[orderBy].toLowerCase();

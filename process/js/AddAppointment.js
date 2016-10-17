@@ -4,18 +4,19 @@ var AddAppointment = React.createClass({
 
   toggleFormDisplay: function() {
     this.props.handleToggle();
-  },
+  }, // toggleFormDisplay
 
   handleFormSubmission: function(e) {
     var tempItem = {
       studentName: this.refs.inputStudentName.value,
       courseName: this.refs.inputCourseName.value,
-      appointmentDate: this.refs.inputAppointmentDate.value + '  ' + 
+      appointmentDate: this.refs.inputAppointmentDate.value + ' ' + 
         this.refs.inputAppointmentTime.value,
       appointmentNotes: this.refs.inputAppointmentNotes.value
     } // tempItem
     e.preventDefault();
-    // this.toggleFormDisplay();
+    this.refs.form.reset();
+    this.toggleFormDisplay();
     this.props.handleSubmission(tempItem);
   }, // handleFormSubmission
 
@@ -34,21 +35,21 @@ var AddAppointment = React.createClass({
 
         <div className="panel-body" style={ displayForm }>
 
-          <form className="add-appointment form-horizontal" onSubmit={ this.handleFormSubmission }>
+          <form className="add-appointment form-horizontal" ref="form" onSubmit={ this.handleFormSubmission }>
 
             <div className="form-group">
               <label className="col-sm-2 control-label" htmlFor="studentName">Student</label>
               <div className="col-sm-10">
                 <input type="text" className="form-control"
-                  id="studentName" ref="inputStudentName" placeholder="Student" />
+                  id="studentName" ref="inputStudentName" placeholder="Student" required />
               </div>
             </div>
 
             <div className="form-group">
-              <label className="col-sm-2 control-label" htmlFor="courseName">Course</label>
+              <label className="col-sm-2 control-label" htmlFor="courseName">Course </label>
               <div className="col-sm-10">
                 <input type="text" className="form-control"
-                  id="courseName" ref="inputCourseName" placeholder="Course" />
+                  id="courseName" ref="inputCourseName" placeholder="Course" required />
               </div>
             </div>
 
@@ -56,7 +57,7 @@ var AddAppointment = React.createClass({
               <label className="col-sm-2 control-label" htmlFor="appointmentDate">Date</label>
               <div className="col-sm-4">
                 <input type="date" className="form-control"
-                  id="appointmentDate" ref="inputAppointmentDate" />
+                  id="appointmentDate" ref="inputAppointmentDate" required />
               </div>
             </div>
 
@@ -64,7 +65,7 @@ var AddAppointment = React.createClass({
               <label className="col-sm-2 control-label" htmlFor="appointmentTime">Time</label>
               <div className="col-sm-4">
                 <input type="time" className="form-control"
-                  id="appointmentTime" ref="inputAppointmentTime" />
+                  id="appointmentTime" ref="inputAppointmentTime" required />
               </div>
             </div>
 

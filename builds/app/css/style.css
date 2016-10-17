@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500,600,700');
 
 /** Global Styles **/
 
 body {
-  font-family: "Roboto Slab", sans-serif;
-  font-weight: 300;
-  font-size: 2em;
+  font-family: "Abhaya Libre", sans-serif;
+  font-weight: 400;
   position: relative;
   background-color: #6e9eb5;
-  font-size: 16px;
+  font-size: 20px;
+  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 100;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -32,8 +32,8 @@ header {
 header h1 {
   color: #fff;
   margin: 0;
-  font-size: 2.5em;
-  font-weight: 400;
+  font-size: 2.6em;
+  font-weight: 600;
   padding-left: 35px;
 }
 
@@ -48,6 +48,7 @@ footer {
   background: #6e9eb5;
   color: white;
   font-size: .8em;
+  font-weight: 400;
   padding: 20px;
   text-align: center;
 }
@@ -61,7 +62,7 @@ footer {
 
 .panel-primary {
   border-color: #acaf64;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .btn-primary {
@@ -69,9 +70,11 @@ footer {
   border-color: #acaf64;
 }
 
-.btn-primary:hover {
-  background-color: #878a3e;
-  border-color: #878a3e;
+.btn-primary:hover, .btn-primary:focus,
+.btn-primary.active, .btn-primary:active, 
+.open > .dropdown-toggle.btn-primary {
+  background-color: #878a3e !important;
+  border-color: #878a3e !important;
 }
 
 .btn-danger {
@@ -79,12 +82,13 @@ footer {
   border-color: #fa8068;
 }
 
-.btn-danger:hover {
-  background-color: #e85f44;
-  border-color: #e85f44;
+.btn-danger:hover, .btn-danger:active, .btn-danger:focus {
+  background-color: #e85f44 !important;
+  border-color: #e85f44 !important;
 }
 
 .appointment-addheading {
+  font-size: 1.3em;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -92,28 +96,64 @@ footer {
   user-select: none; /* Likely future */
 }
 
+.glyphicon-plus {
+  font-size: 20px;
+}
+
+.glyphicon-ok {
+  font-size: 12px;
+}
+
 .item-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
   margin: 10px 5%;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .item-list .appointment-item {
   border-bottom: 1px dotted #ccc;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  margin: 20px 0 10px;
 }
 
 .item-list .appointment-item:last-child {
   border-bottom: none;
 }
 
+.btn-group-xs>.btn, .btn-xs {
+  padding: 2px 3px 1px;
+  margin-top: 4px;
+  line-height: .9;
+  border-radius: 3px;
+}
+
+.dropdown-menu {
+  font-size: 16px;
+}
+
 .item-list .student-name {
   font-weight: 600;
   color: #6e9eb5;
-  font-size: 1.3em;
+  font-size: 1.2em;
   line-height: 100%;
+}
+
+.item-list .course-name {
+  font-size: 1.2em;
+}
+
+.item-list .appointment-date {
+  font-size: .8em;
+}
+
+.item-list .appointment-date {
+  font-size: .8em;
+}
+
+.item-list .appointment-notes {
+  font-size: 1.2em;
 }
 
 .item-list .appointment-info {
@@ -125,6 +165,25 @@ footer {
   color: #999;
 }
 
-.item-list .appointment-delete {
-  font-size: 1.2em;
+.search-appointments {
+  margin-bottom: 30px;
 }
+
+.item-list .appointment-delete {
+  font-size: .9em;
+}
+
+.btn {
+  font-size: 16px;
+}
+
+#search-appointments {
+  font-size: 1.3em;
+}
+
+.form-control {
+  height: 36px;
+  color: #999;
+  font-size: 16px;
+}
+
