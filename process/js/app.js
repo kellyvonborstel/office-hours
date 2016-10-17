@@ -76,10 +76,10 @@ var MainInterface = React.createClass({
 
     myAppointments.forEach(function(item) {
       if (
-        item.studentName.toLowerCase().indexOf(queryText) !== -1 ||
-        item.courseName.toLowerCase().indexOf(queryText) !== -1 ||
-        item.appointmentDate.toLowerCase().indexOf(queryText) !== -1 ||
-        item.appointmentNotes.toLowerCase().indexOf(queryText) !== -1
+        item.studentName.toLowerCase().indexOf(queryText.toLowerCase()) !== -1 ||
+        item.courseName.toLowerCase().indexOf(queryText.toLowerCase()) !== -1 ||
+        item.appointmentDate.toLowerCase().indexOf(queryText.toLowerCase()) !== -1 ||
+        item.appointmentNotes.toLowerCase().indexOf(queryText.toLowerCase()) !== -1
       ) {
         filteredAppointments.push(item);
       }
