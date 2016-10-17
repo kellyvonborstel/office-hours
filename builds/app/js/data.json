@@ -1,0 +1,32 @@
+[
+  {
+    "studentName": "Jane Dugger",
+    "courseName": "VC 237",
+    "appointmentDate": "2016-12-14 15:30",
+    "appointmentNotes": "Discuss exam grade and extra credit work"
+  },
+  {
+    "studentName": "Taylor Erickson",
+    "courseName": "VC 238",
+    "appointmentDate": "2016-12-16 14:30",
+    "appointmentNotes": "Go over forms assignment"
+  },
+  {
+    "studentName": "Sylvia Odari",
+    "courseName": "VC 237",
+    "appointmentDate": "2016-12-11 16:00",
+    "appointmentNotes": "Discuss project deadline extension"
+  },
+  {
+    "studentName": "Emily Lopez",
+    "courseName": "VC 238",
+    "appointmentDate": "2016-12-16 14:00",
+    "appointmentNotes": "Talk about internship opportunities"
+  },
+  {
+    "studentName": "Nick Johnson",
+    "courseName": "VC 238",
+    "appointmentDate": "2016-12-14 16:00",
+    "appointmentNotes": "Review material from week 4"
+  }
+]
