@@ -1,6 +1,15 @@
 var React = require('react');
 
 var SearchAppointments = React.createClass({
+
+  handleSort: function(e) {
+    this.props.onReOrder(e.target.id, this.props.orderDir);
+  }, // handleSort
+
+  handleOrder: function(e) {
+    this.props.onReOrder(this.props.orderBy, e.target.id);
+  }, // handleOrder
+
   render: function() {
     return(
       <div className="row search-appointments">
@@ -12,12 +21,12 @@ var SearchAppointments = React.createClass({
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by: <span className="caret"></span>
               </button>
               <ul className="dropdown-menu dropdown-menu-right">
-                <li><a href="#" id="studentName">Student { this.props.orderBy === 'studentName' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
-                <li><a href="#" id="appointmentDate">Date { this.props.orderBy === 'appointmentDate' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
-                <li><a href="#" id="courseName">Course { this.props.orderBy === 'courseName' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="studentName" onClick={ this.handleSort }>Student { this.props.orderBy === 'studentName' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="appointmentDate" onClick={ this.handleSort }>Date { this.props.orderBy === 'appointmentDate' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="courseName" onClick={ this.handleSort }>Course { this.props.orderBy === 'courseName' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
                 <li role="separator" className="divider"></li>
-                <li><a href="#" id="asc">Asc { this.props.orderDir === 'asc' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
-                <li><a href="#" id="desc">Desc { this.props.orderDir === 'desc' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="asc" onClick={ this.handleOrder }>Asc { this.props.orderDir === 'asc' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
+                <li><a href="#" id="desc" onClick={ this.handleOrder }>Desc { this.props.orderDir === 'desc' ? <span className="glyphicon glyphicon-ok"></span> : null }</a></li>
               </ul>
             </div>
           </div>

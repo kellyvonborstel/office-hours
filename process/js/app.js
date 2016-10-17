@@ -53,6 +53,13 @@ var MainInterface = React.createClass({
     }); // setState
   }, // addItem
 
+  reOrder: function(orderBy, orderDir) {
+    this.setState({
+      orderBy: orderBy,
+      orderDir: orderDir
+    }); // setState
+  }, // reOrder
+
   render: function() {
     var filteredAppointments = this.state.myAppointments;
     var orderBy = this.state.orderBy;
@@ -67,7 +74,8 @@ var MainInterface = React.createClass({
         <AppointmentList key = { index }
           singleItem = { item } 
           whichItem = { item }
-          onDelete = { this.deleteAppointment } />
+          onDelete = { this.deleteAppointment }
+        />
       ) // return
     }.bind(this)); //filteredAppointments
 
@@ -76,10 +84,13 @@ var MainInterface = React.createClass({
         <AddAppointment 
           formVisible = { this.state.appointmentFormVisible }
           handleToggle = { this.toggleAppointmentForm }
-          handleSubmission = { this.addItem } />
+          handleSubmission = { this.addItem }
+        />
         <SearchAppointments 
           orderBy = { this.state.orderBy }
-          orderDir = { this.state.orderDir } />
+          orderDir = { this.state.orderDir }
+          onReOrder = { this.reOrder }
+        />
         <ul className="item-list media-list">{ filteredAppointments }</ul>
       </div>
     ) // return
