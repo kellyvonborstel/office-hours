@@ -5,7 +5,20 @@ var AddAppointment = React.createClass({
   toggleFormDisplay: function() {
     this.props.handleToggle();
   },
-  
+
+  handleFormSubmission: function(e) {
+    var tempItem = {
+      studentName: this.refs.inputStudentName.value,
+      courseName: this.refs.inputCourseName.value,
+      appointmentDate: this.refs.inputAppointmentDate.value + '  ' + 
+        this.refs.inputAppointmentTime.value,
+      appointmentNotes: this.refs.inputAppointmentNotes.value
+    } // tempItem
+    e.preventDefault();
+    // this.toggleFormDisplay();
+    this.props.handleSubmission(tempItem);
+  }, // handleFormSubmission
+
   render: function() {
 
     var displayForm = {
@@ -21,7 +34,7 @@ var AddAppointment = React.createClass({
 
         <div className="panel-body" style={ displayForm }>
 
-          <form className="add-appointment form-horizontal">
+          <form className="add-appointment form-horizontal" onSubmit={ this.handleFormSubmission }>
 
             <div className="form-group">
               <label className="col-sm-2 control-label" htmlFor="studentName">Student</label>
@@ -71,7 +84,6 @@ var AddAppointment = React.createClass({
             </div>
 
           </form>
-
         </div>
       </div>
     )
