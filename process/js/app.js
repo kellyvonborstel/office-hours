@@ -4,6 +4,7 @@ var _ = require('lodash');
 
 var AppointmentList = require('./AppointmentList');
 var AddAppointment = require('./AddAppointment');
+var SearchAppointments = require('./SearchAppointments');
 
 var MainInterface = React.createClass({
 
@@ -68,6 +69,7 @@ var MainInterface = React.createClass({
           formVisible = { this.state.appointmentFormVisible }
           handleToggle = { this.toggleAppointmentForm }
           handleSubmission = { this.addItem } />
+        <SearchAppointments />
         <ul className="item-list media-list">{ filteredAppointments }</ul>
       </div>
     ) // return
